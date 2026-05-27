@@ -1,0 +1,165 @@
+/* ===== SECTION ===== */
+.about-section {
+  padding: 100px 40px;
+}
+
+/* CONTAINER */
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1300px;
+  margin: auto;
+}
+/* HEADER FULL WIDTH */
+.about-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* TAG CENTER FIX */
+.tag {
+  display: inline-block;
+  margin-bottom: 10px;
+
+  background: #0e6ba8;
+  padding: 8px 18px;
+  border-radius: 25px;
+
+  font-weight: 700;
+  color: white;
+
+  box-shadow: 0 5px 15px rgba(14,107,168,0.4);
+}
+
+/* TITLE */
+.about-header h2 {
+  font-size: 40px;
+  font-weight: 900;
+
+  background: linear-gradient(90deg,#e8eaea,#5db0d0);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* ===== IMAGE ===== */
+.about-image {
+  overflow: hidden; /* 🔥 required for zoom effect */
+  border-radius: 20px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* 🔥 ZOOM HOVER */
+.about-image:hover img {
+  transform: scale(1.08);
+}
+
+/* ===== TEXT ===== */
+.about-text {
+  text-align: center; /* 🔥 center everything */
+}
+
+/* 🔥 TAG (WHO WE ARE) */
+.tag {
+  display: block;              /* 🔥 force full width */
+  width: fit-content;          /* shrink to text */
+  margin: 0 auto 15px auto;    /* 🔥 center horizontally */
+
+  background: #0e6ba8;
+  padding: 8px 18px;
+  border-radius: 25px;
+
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+
+  box-shadow: 0 5px 15px rgba(14,107,168,0.4);
+}
+
+/* 🔥 TITLE WITH GRADIENT */
+.about-text h2 {
+  font-size: 40px;
+  font-weight: 900;
+  margin: 15px 0;
+
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  color: transparent;
+
+  /* glow */
+  text-shadow: 0 0 20px rgba(0,198,255,0.3);
+}
+
+/* PARAGRAPH */
+.about-text p {
+  margin-bottom: 15px;
+  opacity: 0.8;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-text h2 {
+    font-size: 30px;
+  }
+}
+
+/* ========================= */
+/* 🌞 LIGHT MODE FIX - ABOUT */
+/* ========================= */
+
+body.light .about-section {
+  background: var(--primary-color);
+  color: #111;
+}
+
+/* ===== TAG FIX ===== */
+body.light .tag {
+  background: #1976d2;
+  color: white;
+  box-shadow: 0 5px 15px rgba(25,118,210,0.25);
+}
+
+/* ===== HEADER TITLE FIX ===== */
+body.light .about-header h2 {
+  background: linear-gradient(90deg, #0d47a1, #2196f3);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* ===== ABOUT TEXT TITLE FIX ===== */
+body.light .about-text h2 {
+  background: linear-gradient(90deg, #0d47a1, #1976d2);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+
+/* ===== PARAGRAPH FIX ===== */
+body.light .about-text p {
+  color: #444;
+  opacity: 0.9;
+}
+
+/* ===== IMAGE SAFETY (optional polish) ===== */
+body.light .about-image {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ===== OPTIONAL: remove harsh glow in light ===== */
+body.light .about-text h2 {
+  text-shadow: none;
+}

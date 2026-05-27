@@ -1,0 +1,308 @@
+/* SECTION */
+.map-section {
+  width: 100%;
+  padding: 80px 20px;
+}
+
+/* HEADER */
+.map-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.subhead {
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #00c6ff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00c6ff;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.desc {
+  max-width: 600px;
+  margin: auto;
+  color: #555;
+}
+
+/* MAP */
+.map-container {
+  max-width: 1200px;
+  height: 650px;
+  margin: auto;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.map {
+  width: 150%;
+  height: 100%;
+}
+
+/* ZOOM HINT */
+.zoom-hint {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: black;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+/* FLOAT CARD */
+.info-card {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 360px; /* slightly wider for single-line title */
+  padding: 20px;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  z-index: 999;
+}
+
+/* TITLE FIX */
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-card h4 {
+  margin: 0;
+  white-space: nowrap; /* ✅ force single line */
+}
+
+.info-card button {
+  display: block;
+  margin: 15px auto 0; /* center + spacing */
+
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+
+  cursor: pointer;
+}
+.info-card {
+  text-align: center; /* center everything */
+  gap: 3px;
+}
+
+/* center rows properly */
+.title-row,
+.address-row,
+.info-row 
+.info-row1{
+  justify-content: center;
+}
+
+/* FLOAT ANIMATION */
+.info-card {
+  animation: floatCard 4s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* BLINK DOT */
+.live-dot {
+  width: 12px;
+  height: 12px;
+  background: #00ff88;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {opacity:1;}
+  50% {opacity:0.3;}
+  100% {opacity:1;}
+}
+
+/* ADDRESS FIX */
+.address-row {
+  display: flex;
+  align-items: center; /* ✅ straight line */
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.addr-icon {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.small {
+  font-size: 13px;
+  margin: 0;
+}
+
+/* DISTANCE CARDS (FINAL FIX) */
+.distance-cards {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 999;
+}
+.distance-cards .card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 230px;
+  padding: 14px 16px;
+
+  border-radius: 12px;
+
+  /* 🔥 GLASS EFFECT FIX */
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.3);
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ICON LEFT */
+.icon-svg {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+  font-size: 22px;
+ 
+
+  background: rgba(0,198,255,0.15);
+  border-radius: 18px;
+}
+
+/* TEXT RIGHT */
+.card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-text h3 {
+  margin: 0;
+  color: #00c6ff;
+  text-align: center;
+  font-size: 16px;
+}
+
+.card-text p {
+  margin: 0;
+  font-size: 12px;
+  color:solid black;
+}
+
+/* BUTTONS FIX (VISIBLE) */
+.btn {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+  border: none;
+
+  font-size: 20px;
+  color: #fff;
+
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+
+  box-shadow: 0 8px 25px rgba(0, 114, 255, 0.5);
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FORCE VISIBILITY */
+.map-buttons {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 1000;
+}
+
+.camera-right {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+}
+
+/* CONTROLS FIX */
+.controls {
+  position: absolute;
+  right: 20px;
+  bottom: 80px;
+
+  background: white;
+  padding: 12px;
+
+  border-radius: 10px;
+  z-index: 1000;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* HIDE LEAFLET UI */
+.leaflet-control-attribution,
+.leaflet-control-zoom {
+  display: none !important;
+}
+
+/* DARK MODE FIX */
+body.dark .info-card,
+body.dark .controls {
+  background: rgba(20, 20, 20, 0.85);
+  color: #fff;
+  backdrop-filter: blur(12px);
+}
+
+body.dark .small,
+body.dark  {
+  color: #ddd;
+}
+
+body.dark .controls p {
+  color: #fff;
+}

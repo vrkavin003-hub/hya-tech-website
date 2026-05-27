@@ -1,0 +1,468 @@
+/* ===== HERO ===== */
+.hero {
+  --move-x: 0px;
+  --move-y: 0px;
+
+  position: relative;
+  height: 95vh;
+  width: 100%;
+
+  overflow: hidden;
+  margin-top: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #020817;
+
+  isolation: isolate;
+}
+
+/* ===== VIDEO ===== */
+.video-bg {
+  position: absolute;
+  inset: -40px;
+
+  width: calc(100% + 80px);
+  height: calc(100% + 80px);
+
+  object-fit: cover;
+
+  z-index: 1;
+
+  transform:
+    translate3d(
+      calc(var(--move-x) * 1.8),
+      calc(var(--move-y) * 1.8),
+      0
+    )
+    scale(1.1);
+
+  transition: transform 0.15s linear;
+
+  will-change: transform;
+
+  filter:
+    brightness(0.38)
+    saturate(1.1);
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(2, 6, 23, 0.70),
+      rgba(3, 15, 35, 0.76),
+      rgba(7, 24, 50, 0.82)
+    );
+
+  pointer-events: none;
+}
+
+/* ===== PARTICLES ===== */
+/* ===== PARTICLES ===== */
+.particles {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 20;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+/* ===== PARTICLE ===== */
+.particles span {
+  position: absolute;
+
+  display: block;
+
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  background: #7dd3fc;
+
+  opacity: 0;
+
+  top: 100%;
+
+  box-shadow:
+    0 0 10px #38bdf8,
+    0 0 25px #38bdf8,
+    0 0 45px #0ea5e9,
+    0 0 80px rgba(56,189,248,1);
+
+  animation: riseParticle linear infinite;
+
+  will-change: transform, opacity;
+}
+
+/* ===== POSITIONS ===== */
+.particles span:nth-child(1) {
+  left: 5%;
+  animation-duration: 7s;
+  animation-delay: 0s;
+}
+
+.particles span:nth-child(2) {
+  left: 12%;
+  width: 6px;
+  height: 6px;
+  animation-duration: 10s;
+  animation-delay: 1s;
+}
+
+.particles span:nth-child(3) {
+  left: 20%;
+  animation-duration: 8s;
+  animation-delay: 2s;
+}
+
+.particles span:nth-child(4) {
+  left: 28%;
+  width: 5px;
+  height: 5px;
+  animation-duration: 12s;
+}
+
+.particles span:nth-child(5) {
+  left: 36%;
+  animation-duration: 9s;
+}
+
+.particles span:nth-child(6) {
+  left: 44%;
+  width: 7px;
+  height: 7px;
+  animation-duration: 13s;
+}
+
+.particles span:nth-child(7) {
+  left: 52%;
+  animation-duration: 11s;
+}
+
+.particles span:nth-child(8) {
+  left: 60%;
+  width: 5px;
+  height: 5px;
+  animation-duration: 8s;
+}
+
+.particles span:nth-child(9) {
+  left: 68%;
+  animation-duration: 10s;
+}
+
+.particles span:nth-child(10) {
+  left: 76%;
+  width: 6px;
+  height: 6px;
+  animation-duration: 12s;
+}
+
+.particles span:nth-child(11) {
+  left: 84%;
+  animation-duration: 9s;
+}
+
+.particles span:nth-child(12) {
+  left: 92%;
+  width: 5px;
+  height: 5px;
+  animation-duration: 14s;
+}
+
+.particles span:nth-child(13) {
+  left: 16%;
+  animation-duration: 10s;
+}
+
+.particles span:nth-child(14) {
+  left: 40%;
+  width: 7px;
+  height: 7px;
+  animation-duration: 13s;
+}
+
+.particles span:nth-child(15) {
+  left: 58%;
+  animation-duration: 9s;
+}
+
+.particles span:nth-child(16) {
+  left: 74%;
+  width: 5px;
+  height: 5px;
+  animation-duration: 11s;
+}
+
+.particles span:nth-child(17) {
+  left: 88%;
+  animation-duration: 8s;
+}
+
+.particles span:nth-child(18) {
+  left: 30%;
+  width: 6px;
+  height: 6px;
+  animation-duration: 12s;
+}
+
+.particles span:nth-child(19) {
+  left: 64%;
+  animation-duration: 9s;
+}
+
+.particles span:nth-child(20) {
+  left: 96%;
+  width: 5px;
+  height: 5px;
+  animation-duration: 10s;
+}
+
+/* ===== PARTICLE MOTION ===== */
+@keyframes riseParticle {
+
+  0% {
+    transform:
+      translateY(0)
+      translateX(0)
+      scale(0);
+
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  50% {
+    transform:
+      translateY(-50vh)
+      translateX(50px)
+      scale(1);
+  }
+
+  100% {
+    transform:
+      translateY(-130vh)
+      translateX(-30px)
+      scale(0.2);
+
+    opacity: 0;
+  }
+}
+/* ===== CONTENT ===== */
+.hero-content {
+  position: relative;
+
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: white;
+
+  max-width: 850px;
+  width: 100%;
+
+  padding: 0 20px;
+
+  transition: transform 0.15s linear;
+}
+
+/* ===== TITLE ===== */
+.hero-title {
+  font-size: 58px;
+  font-weight: 900;
+  line-height: 1.2;
+
+  text-shadow:
+    0 5px 30px rgba(0,0,0,0.5),
+    0 0 25px rgba(56,189,248,0.2);
+}
+
+/* ===== HIGHLIGHT ===== */
+.highlight {
+  color: #38bdf8;
+}
+
+/* ===== SUBHEAD ===== */
+.hero-subhead {
+  font-size: 26px;
+  margin-top: 10px;
+
+  opacity: 0.92;
+}
+
+/* ===== DESC ===== */
+.hero-desc {
+  margin-top: 20px;
+
+  font-size: 17px;
+
+  color: rgba(255,255,255,0.85);
+
+  max-width: 650px;
+
+  line-height: 1.7;
+}
+
+.hero-desc span {
+  color: #4fc3f7;
+}
+
+/* ===== BUTTON ===== */
+.hero-btn {
+  margin-top: 28px;
+
+  padding: 15px 34px;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  background: solid blue;
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+
+  animation: glow 3s infinite;
+}
+
+.hero-btn:hover {
+  transform: translateY(-5px);
+
+  background: rgba(56,189,248,0.35);
+
+  box-shadow:
+    0 0 25px rgba(56,189,248,0.55),
+    0 0 50px rgba(56,189,248,0.35);
+}
+
+/* ===== BUTTON GLOW ===== */
+@keyframes glow {
+
+  0% {
+    box-shadow: 0 0 10px rgba(56,189,248,0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(56,189,248,0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 10px rgba(56,189,248,0.2);
+  }
+}
+
+/* ===== STATS ===== */
+.hero-stats {
+  margin-top: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 40px;
+
+  padding: 24px 40px;
+
+  border-radius: 22px;
+
+  background: rgba(3, 10, 25, 0.75);
+
+  border: 1px solid rgba(125,211,252,0.12);
+
+  animation: floatBox 4s ease-in-out infinite;
+}
+
+/* ===== FLOAT ===== */
+@keyframes floatBox {
+
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+  width: 1px;
+  height: 42px;
+
+  background: rgba(255,255,255,0.2);
+}
+
+/* ===== STATS ===== */
+.stat h2 {
+  font-size: 38px;
+  font-weight: 800;
+
+  color: #7dd3fc;
+}
+
+.stat p {
+  font-size: 13px;
+
+  opacity: 0.82;
+
+  margin-top: 5px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  .hero-title {
+    font-size: 40px;
+  }
+
+  .hero-subhead {
+    font-size: 20px;
+  }
+
+  .hero-desc {
+    font-size: 15px;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 22px;
+
+    padding: 26px;
+  }
+
+  .divider {
+    display: none;
+  }
+}

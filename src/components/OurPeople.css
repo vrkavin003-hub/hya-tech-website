@@ -1,0 +1,157 @@
+/* ===== SECTION ===== */
+.people-section {
+  padding: 100px 80px;
+}
+
+/* 🔥 HEADER FULL CENTER */
+.people-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 70px auto;  /* 💥 perfect centering */
+}
+
+/* SMALL TITLE */
+.people-small {
+  font-size: 19px;
+  letter-spacing: 3px;
+  color: #4fc3f7;
+
+  margin-bottom: 10px;
+
+  text-shadow:
+    0 0 8px rgba(79,195,247,0.6),
+    0 0 15px rgba(79,195,247,0.4);
+}
+
+/* TITLE */
+.people-title {
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 12px;
+
+  background: linear-gradient(90deg,#ffffff,#4fc3f7);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+body.light .people-title {
+  background: linear-gradient(90deg,#0b1f2a,#0072ff);
+  -webkit-background-clip: text;
+}
+
+/* DESC */
+.people-desc {
+  font-size: 17px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+body.light .people-desc {
+  color: #555;
+}
+
+/* ===== GRID ===== */
+.people-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* DARK MODE */
+body.dark .people-section {
+  background: var(--bg-color);
+  color: white;
+}
+
+/* LIGHT MODE */
+body.light .people-section {
+  background: var(--bg-color);
+  color: #111;
+}
+
+/* LIST */
+.people-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* ITEM */
+.people-item {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+
+  padding: 18px;
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+body.dark .people-item {
+  background: rgba(255,255,255,0.05);
+}
+
+body.light .people-item {
+  background: white;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* ICON */
+.icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: linear-gradient(135deg,#00c6ff,#0072ff);
+  font-size: 20px;
+  color: white;
+}
+
+/* TEXT */
+.people-item h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.people-item p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* HOVER */
+.people-item:hover {
+  transform: translateX(8px);
+}
+
+/* IMAGE */
+.people-image img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.people-image:hover img {
+  transform: scale(1.03);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .people-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .people-section {
+    padding: 80px 20px;
+  }
+
+  .people-title {
+    font-size: 32px;
+  }
+}
