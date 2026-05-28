@@ -377,24 +377,69 @@ button {
 }
 
 @media (max-width: 700px) {
+  #offer {
+    padding: 0;
+  }
 
   .offer-section {
-    padding: 90px 20px;
+    margin-top: 0;
+    padding: 72px 16px;
+  }
+
+  .offer-header {
+    margin-bottom: 36px;
+  }
+
+  .offer-subtitle {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .offer-desc {
+    font-size: 15px;
+    line-height: 1.65;
   }
 
   .offer-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .offer-card {
-    height: 300px !important;
+    height: 260px !important;
+    border-radius: 22px !important;
+    clip-path: none;
   }
 
   .offer-title {
-    font-size: 2 rem;
+    font-size: 2rem;
+  }
+
+  .offer-top {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+  }
+
+  .offer-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+  }
+
+  .offer-badge {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+
+  .offer-content {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
   }
 
   .offer-content h3 {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
+    margin-bottom: 14px;
   }
 }

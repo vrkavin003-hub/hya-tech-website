@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Briefcase, Mail, User } from "lucide-react";
 import "./ServiceHero.css";
 
 export default function ServiceHero() {
@@ -84,7 +85,7 @@ export default function ServiceHero() {
   }, []);
 
   return (
-    <section className="about-hero">
+    <section className="about-hero career-hero">
 
       {/* 🔥 CANVAS PARTICLES */}
       <canvas ref={canvasRef} className="particle-canvas"></canvas>
@@ -99,18 +100,107 @@ export default function ServiceHero() {
       {/* OVERLAY */}
       <div className="about-overlay"></div>
 
-      {/* CONTENT */}
-      <div className="about-content">
+      <div className="career-hero-inner">
+        {/* CONTENT */}
+        <div className="about-content career-hero-content">
 
-        <p className="about-small">Career Oppurtunities</p>
-        <h1 className="about-title">
-           <span>Solutions</span>
-        </h1>
+          <p className="about-small">Career Oppurtunities</p>
+          <h1 className="about-title">
+             <span>Solutions</span>
+          </h1>
 
-        <p className="about-desc">
-         From concept to production, we deliver precision engineering excellence across every aspect of modern manufacturing.
-        </p>
+          <p className="about-desc">
+           From concept to production, we deliver precision engineering excellence across every aspect of modern manufacturing.
+          </p>
 
+        </div>
+
+        <div className="career-form-wrap" aria-label="Career Appeal Form">
+          <h2>Career Appeal Form</h2>
+
+          <form
+            className="career-application-form"
+            onSubmit={(event) => event.preventDefault()}
+          >
+            <div className="career-form-card">
+              <h3>Application Form</h3>
+              <p>Fill out the form below for job opportunities</p>
+
+              <div className="career-field-grid">
+                <label className="career-field">
+                  <span>Full name</span>
+                  <div className="career-input">
+                    <User size={14} aria-hidden="true" />
+                    <input type="text" name="fullName" required />
+                  </div>
+                </label>
+
+                <label className="career-field">
+                  <span>Email</span>
+                  <div className="career-input">
+                    <Mail size={14} aria-hidden="true" />
+                    <input type="email" name="email" required />
+                  </div>
+                </label>
+              </div>
+
+              <label className="career-field">
+                <span>What position are you applying for</span>
+                <div className="career-input career-select">
+                  <Briefcase size={14} aria-hidden="true" />
+                  <select name="position" required defaultValue="">
+                    <option value="" disabled></option>
+                    <option>Design Engineer</option>
+                    <option>Manufacturing Engineer</option>
+                    <option>CNC Operator</option>
+                    <option>Quality Inspector</option>
+                    <option>Assembly Technician</option>
+                  </select>
+                </div>
+              </label>
+
+              <fieldset className="career-status">
+                <legend>Specify your current employment status</legend>
+
+                <label>
+                  <input type="radio" name="employmentStatus" value="employed" />
+                  <span>Employed</span>
+                </label>
+
+                <label>
+                  <input type="radio" name="employmentStatus" value="unemployed" />
+                  <span>Unemployed</span>
+                </label>
+
+                <label>
+                  <input type="radio" name="employmentStatus" value="self-employed" />
+                  <span>Self-Employed</span>
+                </label>
+
+                <label>
+                  <input type="radio" name="employmentStatus" value="student" />
+                  <span>Student</span>
+                </label>
+              </fieldset>
+
+              <div className="career-upload">
+                <span>Upload your resume</span>
+                <label className="career-upload-btn">
+                  Upload
+                  <input type="file" name="resume" accept=".pdf,.doc,.docx" />
+                </label>
+              </div>
+
+              <button className="career-submit" type="submit">
+                Submit
+              </button>
+            </div>
+
+            <p className="career-form-credit">
+              &copy; 2017 Career Appeal Form. All Rights Reserved | Design by W3layouts
+            </p>
+          </form>
+        </div>
       </div>
 
     </section>

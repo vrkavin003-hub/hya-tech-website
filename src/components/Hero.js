@@ -89,7 +89,7 @@ export default function Hero() {
         preload="auto"
         className="video-bg"
       >
-        <source src="/factory_hd.mp4" type="video/mp4" />
+        <source src="/factory.mp4" type="video/mp4" />
       </video>
 
       {/* OVERLAY */}

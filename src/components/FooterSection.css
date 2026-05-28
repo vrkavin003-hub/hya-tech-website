@@ -180,3 +180,58 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 600px) {
+  .cta-wrapper {
+    padding: 44px 16px;
+  }
+
+  .cta-box {
+    padding: 42px 18px;
+    border-radius: 16px;
+  }
+
+  .cta-box h2 {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+
+  .cta-box p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+  }
+
+  .footer {
+    padding: 44px 20px 22px;
+  }
+
+  .footer-grid {
+    gap: 28px;
+  }
+
+  .footer .logo {
+    margin-left: 0;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .footer-bottom div {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}

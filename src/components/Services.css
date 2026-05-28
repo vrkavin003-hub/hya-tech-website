@@ -159,11 +159,32 @@ body.light .srv-card {
 }
 
 @media (max-width: 600px) {
+  .srv-root {
+    min-height: auto;
+    padding: 72px 16px 80px;
+  }
+
+  .srv-header {
+    margin-bottom: 36px;
+  }
+
   .srv-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .srv-header h1 {
     font-size: 34px;
+    line-height: 1.15;
+  }
+
+  .srv-card {
+    height: auto;
+    min-height: 210px;
+    padding: 22px 18px;
+  }
+
+  .srv-inner {
+    max-width: none;
   }
 }

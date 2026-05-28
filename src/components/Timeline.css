@@ -192,25 +192,52 @@
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
+  .timeline-section {
+    margin-top: 0;
+    padding: 72px 16px;
+  }
+
+  .timeline-title {
+    font-size: 34px;
+    line-height: 1.15;
+  }
+
+  .timeline-desc {
+    max-width: 340px;
+    margin: 10px auto 36px;
+    line-height: 1.6;
+  }
 
   .timeline::before,
   .timeline-progress {
-    left: 15px;
+    left: 24px;
   }
 
   .timeline-item {
     width: 100%;
-    padding-left: 60px;
+    padding: 14px 0 14px 64px;
     left: 0 !important;
   }
 
   .timeline-dot {
     left: 0 !important;
+    width: 48px;
+    height: 48px;
+    font-size: 12px;
   }
 
   .timeline-arrow,
   .spark {
-    left: 15px !important;
+    display: none;
+  }
+
+  .timeline-card {
+    padding: 18px;
+  }
+
+  .timeline-card p {
+    font-size: 13.5px;
+    line-height: 1.55;
   }
 }
 
@@ -306,4 +333,27 @@ body.light .spark {
 .stat p {
   font-size: 14px;
   opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .timeline-section .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 44px auto 0;
+    padding: 24px 16px;
+    border-radius: 14px;
+  }
+
+  .timeline-section .stats .stat {
+    text-align: center;
+  }
+
+  .timeline-section .stats .stat h2 {
+    font-size: 28px;
+  }
+
+  .timeline-section .stats .stat p {
+    font-size: 12px;
+    line-height: 1.4;
+  }
 }
