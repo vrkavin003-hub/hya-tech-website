@@ -1,0 +1,169 @@
+/* ===== ROOT ===== */
+.srv-root {
+  min-height: 100vh;
+  padding: 0px 4px 100px;
+}
+
+/* ===== THEME ===== */
+body.dark .srv-root {
+  background: var(--bg-color);
+  color: #e6edf3;
+}
+
+body.light .srv-root {
+  background: var(--bg-color);
+  color: #0b1c2c;
+}
+
+/* ===== HEADER ===== */
+.srv-header {
+  max-width: 760px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.srv-badge {
+  display: inline-block;
+  background: #1f8edc;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.srv-header h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.srv-header h1 span {
+  color: #1f8edc;
+}
+
+.srv-header p {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+
+/* ===== GRID ===== */
+.srv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== CARD ===== */
+.srv-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 260px;
+  padding: 24px;
+
+  transition: 0.3s ease;
+}
+
+/* DARK */
+body.dark .srv-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+}a
+
+/* LIGHT */
+body.light .srv-card {
+  background: rgba(0,0,0,0.04);
+  border: 1px solid black;
+}
+
+/* HOVER */
+.srv-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ===== INNER (ALIGNMENT FIX) ===== */
+.srv-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  gap: 16px;
+  max-width: 240px;
+}
+
+/* ===== ICON ===== */
+.icon-wrap {
+  width: 60px;
+  height: 60px;
+
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(31,142,220,0.1);
+}
+
+/* ICON STYLE */
+.icon-wrap svg {
+  width: 28px;
+  height: 28px;
+  stroke: #1f8edc;
+  stroke-width: 2;
+}
+
+/* HOVER */
+.srv-card:hover .icon-wrap {
+  background: #1f8edc;
+}
+
+.srv-card:hover svg {
+  stroke: #fff;
+}
+
+/* ===== TEXT ===== */
+.srv-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.srv-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* ===== SHAPES (SUBTLE VARIATION) ===== */
+.shape1 { border-radius: 20px; }
+.shape2 { border-radius: 28px 12px; }
+.shape3 { border-radius: 16px 32px; }
+.shape4 { border-radius: 32px 16px; }
+.shape5 { border-radius: 12px 28px; }
+.shape6 { border-radius: 24px; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1000px) {
+  .srv-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .srv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .srv-header h1 {
+    font-size: 34px;
+  }
+}
